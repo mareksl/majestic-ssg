@@ -1,11 +1,10 @@
 <template>
-  <header class="header">
-    <strong>
-      <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-    </strong>
+  <header>
     <nav class="nav">
-      <g-link class="nav__link" to="/">Home</g-link>
-      <g-link class="nav__link" to="/about/">About</g-link>
+      <h1>
+        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+      </h1>
+      <NavLinks/>
     </nav>
   </header>
 </template>
@@ -19,20 +18,15 @@ query {
 </static-query>
 
 <script>
+import NavLinks from '@/components/NavLinks';
+
 export default {
-  name: "Header"
+  name: "Header",
+  components: {NavLinks}
 }
 </script>
 
 <style lang="scss" scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
 .nav__link {
   margin-left: 20px;
 }
