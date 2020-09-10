@@ -8,15 +8,15 @@
 </template>
 
 <style lang="scss">
-body {
-  font-family: 'Lato', sans-serif;
-}
+
 
 </style>
 <script>
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 
 export default {
-  components: {Header}
+  components: {
+    Header
+  }
 }
 </script>

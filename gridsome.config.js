@@ -6,5 +6,23 @@
 
 module.exports = {
     siteName: 'Majestic',
-    plugins: []
+    plugins: [
+        {
+            use: "gridsome-plugin-i18n",
+            options: {
+                locales: [
+                    "pl"
+                ],
+                fallbackLocale: "pl",
+                defaultLocale: "pl",
+                enablePathRewrite: false,
+                rewriteDefaultLocale: false,
+            }
+        }
+    ],
+    resolve: {
+        alias: {
+            '@': require('path').join(__dirname, 'src')
+        }
+    }
 }

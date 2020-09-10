@@ -10,14 +10,15 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
+  metaInfo() {
+    return {
+      titleTemplate: "%s",
+      title: this.$i18n.t('meta.fullTitle')
+    }
   }
 }
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
+
 </style>
