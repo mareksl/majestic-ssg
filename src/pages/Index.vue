@@ -41,6 +41,18 @@ export default {
       titleTemplate: "%s",
       title: this.$i18n.t("meta.fullTitle")
     };
+  },
+  methods: {
+    scrollToSection(hash) {
+      window.addEventListener("load", () => {
+        if (hash) {
+          this.$scrollTo(hash, 1);
+        }
+      });
+    }
+  },
+  mounted() {
+    this.scrollToSection(window.location.hash);
   }
 };
 </script>
