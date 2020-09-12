@@ -12,7 +12,8 @@ export default function(Vue, { router, head, isClient, appOptions }) {
 
   Vue.use(vClickOutside);
   Vue.use(VueScrollTo, {
-    offset: -64
+    offset: -64,
+    duration: 500
   });
 
   head.link.push({
