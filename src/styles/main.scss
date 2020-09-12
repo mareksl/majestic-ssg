@@ -1,0 +1,15 @@
+@import "./base/reset";
+@import "./base/base";
+@import "./variables/colors";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $color-primary-text;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  line-height: 1.5;
+}

@@ -1,33 +1,48 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <Hero />
+    <Parallax image="img-1.jpg" />
+    <About />
+    <Parallax image="img-2.jpg" />
+    <Gallery />
+    <Parallax image="img-3.jpg" />
+    <Concerts />
+    <Parallax image="img-4.jpg" />
+    <MusicAndVideo />
+    <Parallax image="img-5.jpg" />
+    <Contact />
+    <Footer />
   </Layout>
 </template>
 
 <script>
+import Parallax from "@/components/Parallax/Parallax";
+import Hero from "@/components/sections/Hero/Hero";
+import About from "@/components/sections/About/About";
+import Gallery from "@/components/sections/Gallery/Gallery";
+import Concerts from "@/components/sections/Concerts/Concerts";
+import MusicAndVideo from "@/components/sections/MusicAndVideo/MusicAndVideo";
+import Contact from "@/components/sections/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
+
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
+  components: {
+    Footer,
+    Contact,
+    MusicAndVideo,
+    Concerts,
+    Gallery,
+    About,
+    Parallax,
+    Hero
+  },
+  metaInfo() {
+    return {
+      titleTemplate: "%s",
+      title: this.$i18n.t("meta.fullTitle")
+    };
   }
-}
+};
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
+<style></style>
