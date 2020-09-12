@@ -5,24 +5,25 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-    siteName: 'Majestic',
-    plugins: [
-        {
-            use: "gridsome-plugin-i18n",
-            options: {
-                locales: [
-                    "pl"
-                ],
-                fallbackLocale: "pl",
-                defaultLocale: "pl",
-                enablePathRewrite: false,
-                rewriteDefaultLocale: false,
-            }
-        }
-    ],
-    resolve: {
-        alias: {
-            '@': require('path').join(__dirname, 'src')
-        }
+  siteName: "Majestic",
+  plugins: [
+    {
+      use: "gridsome-plugin-i18n",
+      options: {
+        locales: ["pl"],
+        fallbackLocale: "pl",
+        defaultLocale: "pl",
+        enablePathRewrite: false,
+        rewriteDefaultLocale: false
+      }
     }
-}
+  ],
+  resolve: {
+    alias: {
+      "@": require("path").join(__dirname, "src")
+    }
+  },
+  chainWebpack: config => {
+    config.resolve.alias.set("@images", "@/assets/images");
+  }
+};

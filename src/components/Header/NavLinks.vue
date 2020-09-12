@@ -1,7 +1,16 @@
 <template>
-  <ul class="nav-links" :class="{'nav-links--open':navOpen}">
-    <li class="nav-links__item" v-for="navLink in navLinks" :key="navLink.title">
-      <a class="nav-links__link" :href="navLink.href">{{ navLink.title }}</a>
+  <ul class="nav-links" :class="{ 'nav-links--open': navOpen }">
+    <li
+      class="nav-links__item"
+      v-for="navLink in navLinks"
+      :key="navLink.title"
+    >
+      <a
+        class="nav-links__link"
+        :href="navLink.href"
+        @click="linkClicked(navLink.href)"
+        >{{ navLink.title }}</a
+      >
     </li>
   </ul>
 </template>
@@ -17,28 +26,34 @@ export default {
       navLinks: [
         {
           href: "#onas",
-          title: this.$i18n.t('header.nav.aboutUs')
+          title: this.$i18n.t("header.nav.aboutUs")
         },
         {
           href: "#galeria",
-          title: this.$i18n.t('header.nav.gallery')
+          title: this.$i18n.t("header.nav.gallery")
         },
         {
           href: "#koncerty",
-          title: this.$i18n.t('header.nav.concerts')
+          title: this.$i18n.t("header.nav.concerts")
         },
         {
           href: "#muzyka",
-          title: this.$i18n.t('header.nav.musicAndVideo')
+          title: this.$i18n.t("header.nav.musicAndVideo")
         },
         {
           href: "#kontakt",
-          title: this.$i18n.t('header.nav.contact')
-        },
+          title: this.$i18n.t("header.nav.contact")
+        }
       ]
+    };
+  },
+  methods: {
+    linkClicked(href) {
+      this.$emit("linkClicked");
+      this.$scrollTo(href);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +64,7 @@ export default {
   display: flex;
   overflow: hidden;
   max-height: 0;
-  transition: .4s;
+  transition: 0.4s;
   opacity: 0;
   flex-flow: column;
   justify-content: space-between;
@@ -67,7 +82,7 @@ export default {
   }
 
   &__link {
-    padding: .5rem;
+    padding: 0.5rem;
     display: block;
     text-decoration: none;
     color: $color-primary-dark;

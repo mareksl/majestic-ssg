@@ -26,10 +26,11 @@ export default {
 
 .nav-toggle {
   position: absolute;
-  top: 1.5rem;
+  top: 0;
   right: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
   transition: .4s;
   border: 0;
