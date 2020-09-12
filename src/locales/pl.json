@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Majestic",
+    "fullTitle": "Majestic Reggae & Ska Band"
+  },
+  "header": {
+    "nav": {
+      "aboutUs": "O nas",
+      "gallery": "Galeria",
+      "concerts": "Koncerty",
+      "musicAndVideo": "Muzyka i Wideo",
+      "contact": "Kontakt"
+    }
+  }
+}
