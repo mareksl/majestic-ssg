@@ -1,0 +1,11 @@
+@mixin heading-section {
+  text-align: center;
+  font-family: 'Poiret One', sans-serif;
+  font-size: 8vmin;
+  padding-bottom: 1rem;
+}
+
+@mixin img-responsive {
+  width: 100%;
+  height: auto;
+}
