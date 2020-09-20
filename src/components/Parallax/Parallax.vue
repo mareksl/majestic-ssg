@@ -20,10 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/variables/colors";
+@import "src/styles/mixins/mixins";
 
 .parallax {
   position: relative;
-  height: 50vh;
+  max-height: 50vh;
   width: 100%;
   overflow: hidden;
 
@@ -45,7 +46,7 @@ export default {
   }
 
   &__image {
-    width: 100%;
+    @include img-responsive;
   }
 }
 </style>

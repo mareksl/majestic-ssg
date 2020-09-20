@@ -61,10 +61,10 @@ export default {
     &:hover {
       transition: 0.4s;
       animation: logo 0.4s forwards;
-      filter: drop-shadow($hover-shadow-dark);
 
       .social-links__icon {
         fill: $color-accent-light;
+        filter: drop-shadow($hover-shadow-dark);
       }
     }
   }
