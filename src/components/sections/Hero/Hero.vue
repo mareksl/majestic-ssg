@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/variables/dimensions";
+@import "src/styles/mixins/mixins";
 
 .hero {
   position: relative;
@@ -31,12 +31,8 @@ export default {
   &__content {
     max-width: 400px;
     margin: 0 2rem;
-  }
-}
 
-@media screen and (min-width: $breakpoint-sm) {
-  .hero {
-    &__content {
+    @include media-sm {
       max-width: unset;
       min-width: 400px;
       width: 33%;

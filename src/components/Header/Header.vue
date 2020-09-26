@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/variables/dimensions";
+@import "src/styles/mixins/mixins";
 @import "src/styles/variables/colors";
 
 .header {
@@ -48,6 +48,10 @@ export default {
   transition: 0.4s ease;
   background-color: $color-primary-light;
 
+  @include media-sm {
+    height: 4rem;
+  }
+
   &__nav {
     display: flex;
     width: 100%;
@@ -57,14 +61,7 @@ export default {
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: center;
-  }
-}
-
-@media screen and (min-width: $breakpoint-sm) {
-  .header {
-    height: 4rem;
-
-    &__nav {
+    @include media-sm {
       flex-flow: row;
     }
   }

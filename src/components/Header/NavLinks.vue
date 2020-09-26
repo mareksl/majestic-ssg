@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../styles/variables/colors";
-@import "../../styles/variables/dimensions";
+@import "../../styles/mixins/mixins";
 
 .nav-links {
   display: flex;
@@ -68,6 +68,12 @@ export default {
   opacity: 0;
   flex-flow: column;
   justify-content: space-between;
+
+  @include media-sm {
+    max-height: initial;
+    opacity: 1;
+    flex-flow: row nowrap;
+  }
 
   &--open {
     max-height: 100vh;
@@ -79,6 +85,15 @@ export default {
     text-align: center;
     white-space: nowrap;
     border-top: 1px solid $color-primary-dark;
+
+    @include media-sm {
+      border-top: 0;
+      border-right: 1px solid $color-primary-dark;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
   }
 
   &__link {
@@ -87,31 +102,14 @@ export default {
     text-decoration: none;
     color: $color-primary-dark;
 
+    @include media-sm {
+      padding: 0 1rem;
+    }
+
     &:focus,
     &:hover {
       text-decoration: underline;
       color: $color-primary;
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-sm) {
-  .nav-links {
-    max-height: initial;
-    opacity: 1;
-    flex-flow: row nowrap;
-
-    &__item {
-      border-top: 0;
-      border-right: 1px solid $color-primary-dark;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
-
-    &__link {
-      padding: 0 1rem;
     }
   }
 }
