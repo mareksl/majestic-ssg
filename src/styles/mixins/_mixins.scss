@@ -1,3 +1,5 @@
+@import "../variables/dimensions";
+
 @mixin heading-section {
   text-align: center;
   font-family: 'Poiret One', sans-serif;
@@ -8,4 +10,16 @@
 @mixin img-responsive {
   width: 100%;
   height: auto;
+}
+
+@mixin media-sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin media-m {
+  @media (min-width: #{$breakpoint-m}) {
+    @content;
+  }
 }
