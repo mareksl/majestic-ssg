@@ -21,5 +21,8 @@
   "gallery": {
     "defaultAlt": "Zdjęcie z galerii",
     "modalCloseLabel": "Zamknij dialog"
+  },
+  "concerts": {
+    "showMore": "Pokaż więcej..."
   }
 }
