@@ -1,15 +1,15 @@
 <template>
   <ul class="nav-links" :class="{ 'nav-links--open': navOpen }">
     <li
-      class="nav-links__item"
-      v-for="navLink in navLinks"
-      :key="navLink.title"
+        class="nav-links__item"
+        v-for="navLink in navLinks"
+        :key="navLink.title"
     >
       <a
-        class="nav-links__link"
-        :href="navLink.href"
-        @click="linkClicked(navLink.href)"
-        >{{ navLink.title }}</a
+          class="nav-links__link"
+          :href="navLink.href"
+          @click="linkClicked(navLink.href)"
+      >{{ navLink.title }}</a
       >
     </li>
   </ul>
@@ -98,18 +98,13 @@ export default {
 
   &__link {
     padding: 0.5rem;
+
+    @include text-link;
     display: block;
-    text-decoration: none;
     color: $color-primary-dark;
 
     @include media-sm {
       padding: 0 1rem;
-    }
-
-    &:focus,
-    &:hover {
-      text-decoration: underline;
-      color: $color-primary;
     }
   }
 }
